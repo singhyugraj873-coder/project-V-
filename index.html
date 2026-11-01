@@ -1,0 +1,55 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallel You — Simulator of Your Unlived Life</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PARALLEL YOU</h1>
+            <p class="tagline">Explore the branching paths of your unlived life.</p>
+        </header>
+
+        <main class="dashboard">
+            <section class="profile-card">
+                <h2>Your Current Timeline</h2>
+                <p>Enter your baseline parameters to begin simulation.</p>
+                
+                <div class="input-group">
+                    <label>Current Focus / Skill:</label>
+                    <input type="text" id="skillInput" placeholder="e.g., Computer Engineering, Business">
+                </div>
+
+                <div class="input-group">
+                    <label>Available Hours per Week:</label>
+                    <input type="number" id="hoursInput" value="20">
+                </div>
+
+                <button id="simulateBtn" class="glow-btn">Initialize Timelines</button>
+            </section>
+
+            <section class="timelines-container">
+                <h2>Branching Futures</h2>
+                <div class="timeline-box" id="timelineResult">
+                    <p class="placeholder-text">Your alternate timelines will appear here...</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('simulateBtn').addEventListener('click', function() {
+            const skill = document.getElementById('skillInput').value || 'General Path';
+            const resultBox = document.getElementById('timelineResult');
+            resultBox.innerHTML = `
+                <h3>Simulation Generated for: ${skill}</h3>
+                <p><strong>Timeline A (Optimized):</strong> High consistency leads to mastery within 6 months.</p>
+                <p><strong>Timeline B (Chaotic):</strong> Unpredictable setbacks test your adaptability, building resilience.</p>
+            `;
+        });
+    </script>
+</body>
+</html>
